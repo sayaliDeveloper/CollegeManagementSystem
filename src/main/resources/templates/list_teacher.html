@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Faculty Details List</title>
+<link th:href="@{/css/Style.css}" rel="stylesheet">
+</head>
+<body>
+<div align="center">
+ <h1>Faculty Details</h1>
+ 
+ <br/><br/>
+ <form th:action="@{/Faculty_single}" method="get">
+  
+  <input type="text" name="keyword" th:value="${keyword}"  placeholder="Find by Id , Name & Email" size="50" >
+  <button type="submit" class="btn btn-info" >Search</button>
+  </form></br></br>
+ <table border="1" cellpadding="10">
+ <thead>
+ <tr>
+ <th> Faculty Id</th>
+  <th> Name</th>
+   <th> EmailId</th>
+    <th> Post</th>
+      <th> Actions</th>
+      </tr>
+      </thead>
+      
+      <tbody>
+      <tr th:each="faculty : ${listFaculty}">
+      <td th:text="${faculty.id}">Faculty ID </td>
+            <td th:text="${faculty.name}">Name</td>
+                  <td th:text="${faculty.email}">EmailId</td>
+                        <td th:text="${faculty.post}">Post </td>
+                        
+                      
+        </tr>  
+        </tbody>    
+        </table>
+        </div>
+               
+                              
+ 
+</body>
+</html>

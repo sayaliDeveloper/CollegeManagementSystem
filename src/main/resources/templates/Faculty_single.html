@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ <a th:href="@{'/'}">Home</a>
+  <a th:href="@{'/teacher_login'}">List all</a>
+    <h2 align="center">Individual Faculty Record</h2></br></br>
+    
+<div id="div1" align="center">
+			 <table class="table table-bordered table-sm mt" border="1" cellpadding="10">
+    <thead>
+      <tr>
+        <th>Faculty id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Post</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="faculty : ${listFaculty}" th:field="${faculty}">
+        <td th:text="${faculty.id}"></td>
+        <td th:text="${faculty.name}"></td>
+        <td th:text="${faculty.email}"></td>
+                <td th:text="${faculty.post}"></td>
+      </tr>
+      <tr th:each="faculty : ${listFaculty}">
+      <td th:text="${faculty.id}">Faculty ID </td>
+            <td th:text="${faculty.name}">Name</td>
+                  <td th:text="${faculty.email}">EmailId</td>
+                        <td th:text="${faculty.post}">Post </td>
+                        
+                        
+        </tr>  
+    </tbody>
+  </table>
+			
+			
+</div>
+</body>
+</html>
+
+
+			

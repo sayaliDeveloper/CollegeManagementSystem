@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+  <a th:href="@{'/'}">Home</a>
+<h5>This is management login page</h5>
+<div id="bd">
+      <h1>Administrator</h1>
+     
+     <div id="nav">
+     <a th:href="@{'/add_Teacher'}">Manage Faculty</a>
+     
+     <a th:href="@{/add_courses}">Manage Course</a>
+     <a th:href="@{/books}">Manage books </a>
+     <a th:href="@{/exams}">Manage Exams</a>
+     <a th:href="@{/add_subject}">Manage Subjects</a>
+     <a th:href="@{/add_department}">Manage Department</a>
+     
+
+	 </div>
+     </div>
+</body>
+</html>

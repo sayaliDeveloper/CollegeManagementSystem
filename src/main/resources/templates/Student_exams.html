@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div id="div1" align="center">
+			<h1>Exam Time Table</h1>
+			
+			<table border="1" cellpadding="10">
+				<thead>
+				<tr>
+				<th>Room ID</th>
+				<th>Subject Code</th>
+				<th>Date</th>
+				<th>Time</th>
+				</tr>
+				</thead>
+				
+				<tbody>
+				<tr th:each="exam : ${listexam}">
+				<td th:text="${exam.room}">Room ID</td>
+				<td th:text="${exam.code}">Subject Code</td>
+				<td th:text="${exam.date}">Date</td>
+				<td th:text="${exam.time}">Time</td>
+					
+				</tbody>
+			</table>
+</div>
+</body>
+</html>

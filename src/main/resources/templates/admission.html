@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Registration Form</title>
+
+<style>
+h3{
+  font-family: Calibri; 
+  font-size: 25pt;         
+  font-style: normal; 
+  font-weight: bold; 
+  color:SlateBlue;
+  text-align: center; 
+  text-decoration: underline
+}
+
+table{
+  font-family: Calibri; 
+  color:white; 
+  font-size: 11pt; 
+  font-style: normal;
+  font-weight: bold;
+  text-align: normal; 
+  background-color: SlateBlue; 
+  border-collapse: collapse; 
+  border: 2px solid navy
+}
+table.inner{
+  border: 0px
+}
+</style>
+
+</head>
+ 
+<body>
+<div>
+ <a href="/">Home</a>
+<h3>STUDENT REGISTRATION FORM</h3>
+
+<form action="#" th:action="@{/save}" th:object="${student}" method="post">
+<table align="center" cellpadding = "10">
+ 
+<!----- First Name ---------------------------------------------------------->
+<tr>
+<td>FIRST NAME</td>
+<td><input type="text" name="First_Name" maxlength="30" th:field="*{name}"/>
+(max 30 characters a-z and A-Z)
+</td>
+</tr>
+ 
+
+ 
+<!----- Email Id ---------------------------------------------------------->
+<tr>
+<td>EMAIL ID</td>
+<td><input type="text" name="Email_Id" maxlength="100" th:field="*{email}"/></td>
+</tr>
+
+<!----- PASSWORD ---------------------------------------------------------->
+ <tr>
+ <td><label for="password">Password</label><br/></td>
+ <td>
+ <input type="password" id="password" name="password" th:field="*{password}">
+(Use num and characters only)
+ </td>
+ </tr> 
+
+ 
+<!----- Course ---------------------------------------------------------->
+<tr>
+<td>
+<label>Select course</label></td>
+<td><select th:field="*{course}">  
+<option value="default">choose</option> 
+<option value="Bsc Computer Science">Bsc CS</option>
+<option value="Msc Computer Science">Msc CS</option> 
+<option value="BCA">Bca</option>  
+<option value="MCA">Mca</option>  
+<option value="B.Tech">B.Tech</option>  
+<option value="M.Tech">M.Tech</option>  
+<option value="MBA">MBA</option>  
+ 
+</select>  
+</td>
+</tr>
+ 
+<!----- Submit and Reset ------------------------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table>
+ 
+</form>
+
+</div>
+ 
+</body>
+</html>
